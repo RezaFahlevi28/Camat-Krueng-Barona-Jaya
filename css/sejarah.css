@@ -1,0 +1,249 @@
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* hero */
+.hero-img {
+    width: 100%;
+    height: 550px;
+    background: url(../img/slider/Banner-1.jpg) no-repeat;
+    background-size: cover;
+    /* z-index: -1; */
+}
+
+
+/* navbar */
+nav {
+    height: 96px;
+    background: linear-gradient(270deg, #FFFFFF 37.08%, rgba(255, 255, 255, 0) 75.66%);
+}
+
+nav .container {
+    display: flex;
+}
+
+nav .logo img {
+    width: 220px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #121127 !important;
+    margin-left: 42px;
+}
+
+/* Hamburger Menu */
+.menu-toogle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.menu-toogle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #121127ff;
+    transition: all .7s;
+}
+
+.menu-toogle span.dua {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #121127;
+    transition: all .7s;
+}
+
+.menu-toogle input {
+    width: 28px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99;
+}
+
+/* Hamburger Menu Animation */
+.menu-toogle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toogle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toogle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toogle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toogle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* sejarah */
+section.sejarah {
+    text-align: center;
+    padding: 60px 320px 0 320px;
+}
+
+section.sejarah h1,
+section.geografi h1 {
+    margin-bottom: 32px;
+    font-size: 44px;
+    font-weight: bold;
+}
+
+/* geografi */
+section.geografi {
+    background-color: #fdfdfd;
+    padding: 50px 132px;
+    text-align: center;
+    margin-top: 60px;
+    overflow-x: hidden;
+}
+
+/* section.geografi .row {
+    border: 2px solid black;
+}
+
+section.geografi .row .col {
+    border: 2px solid salmon;
+} */
+
+section.geografi .card {
+    border: 1px solid#121127;
+    margin: 0 auto;
+    margin-right: 45%;
+    margin-top: 55px;
+}
+
+section.geografi .card-header {
+    color: white;
+    background-color: #121127;
+}
+
+section.geografi img {
+    width: 550px;
+    border: 10px solid #FFFFFF;
+    filter: drop-shadow(0px 20px 50px rgba(0, 0, 0, 0.08));
+    border-radius: 20px;
+    margin-top: 12px;
+}
+
+/* footer */
+footer {
+    height: 120px;
+    background-color: #121127;
+}
+
+footer p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 120px;
+}
+
+/* Responsive Breakpoint */
+/* Ukuran Tablet */
+@media screen and (max-width: 967px) {
+
+    /* hero */
+    .hero-img {
+        height: 450px;
+        background-size: contain;
+    }
+
+    /* sejarah */
+    section.sejarah {
+        padding: 20px 10px 0 10px;
+    }
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 576px) {
+    nav {
+        background: white;
+    }
+
+    .menu-toogle {
+        display: flex;
+        z-index: 99;
+    }
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #e2e2e2;
+        z-index: 99 !important;
+        transform: translateY(-100%);
+        transition: all 1s;
+        color: white;
+    }
+
+    nav ul.slide {
+        transform: translateY(0);
+    }
+
+    /* hero */
+    .hero-img {
+        height: 250px;
+    }
+
+    /* sejarah */
+    section.sejarah {
+        padding: 20px 40px 0 40px;
+    }
+
+    section.sejarah h1,
+    section.geografi h1 {
+        font-size: 34px;
+    }
+
+    /* geografi */
+    section.geografi {
+        padding: 60px 10px;
+    }
+
+    section.geografi .row {
+        margin: 0 auto;
+    }
+
+    section.geografi .row .card {
+        margin: 20px auto !important;
+    }
+
+    section.geografi h3 {
+        margin-top: 28px;
+    }
+
+    section.geografi img {
+        margin-top: 20px;
+        border: 5px solid white;
+        width: 100%;
+    }
+}
